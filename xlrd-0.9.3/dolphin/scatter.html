@@ -26,7 +26,12 @@
         <script type="text/javascript">
             var width = 800;
             var height = 500;
-            d3.csv("data.csv", function(data){
+            var magnifer = 100;
+            var radius = 2;
+            var datafile = "data.csv";
+            var x_index = "1980.0";
+            var y_index = "2009.0";
+            d3.csv(datafile, function(data){
                 console.log(data);
                 var svg = d3.select("body")
                             .append("svg")
@@ -40,13 +45,13 @@
 
                 circles.attr("cx", function(d) {
                         // need be consistent with the name in csv
-                         return d["1980.0"] * 100;
+                         return d[x_index] * magnifer;
                      })
                      .attr("cy", function(d) {
                         // need be consistent with the name in csv
-                        return d["2009.0"] * 100;
+                        return d[y_index] * magnifer;
                      })
-                     .attr("r", 2);
+                     .attr("r", radius);
 
                 // labels
                 var texts = svg.selectAll("text")
