@@ -1,0 +1,65 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+        <script type="text/javascript" src="d3/d3.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <style>
+    		div.bar {
+			    display: inline-block;
+			    width: 20px;
+			    height: 75px;   
+			    background-color: teal;
+			    margin-right: 2px;
+			}
+			.pumpkin {
+			    fill: yellow;
+			    stroke: orange;
+			    stroke-width: 5;
+			 }
+    	</style>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            var width = 800;
+            var height = 500;
+            var magnifer = 100;
+            var radius = 2;
+            var datafile = "data.csv";
+            var x_index = "1980.0";
+            var y_index = "2009.0";
+            d3.csv(datafile, function(data){
+                console.log(data);
+                var svg = d3.select("body")
+                            .append("svg")
+                            .attr("width", width)
+                            .attr("height", height);
+
+                var circles = svg.selectAll("circle")
+                             .data(data)
+                             .enter()
+                             .append("circle");
+
+                circles.attr("cx", function(d) {
+                        // need be consistent with the name in csv
+                         return d[x_index] * magnifer;
+                     })
+                     .attr("cy", function(d) {
+                        // need be consistent with the name in csv
+                        return d[y_index] * magnifer;
+                     })
+                     .attr("r", radius);
+
+                // labels
+                var texts = svg.selectAll("text")
+                                .data(dataset)
+                                .enter()
+                                .append("text");
+
+            })
+        </script>
+    </body>
+</html> 
