@@ -30,7 +30,8 @@ body {
 
 var dataInputFile = "line_data.tsv"
 
-var yLable = "ylabel"
+var yLabel = "ylabel"
+var xLabel = ""
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -89,7 +90,7 @@ d3.tsv(dataInputFile, function(error, data) {
       .attr("y", 6)
       .attr("dy", ".71em")
       .style("text-anchor", "end")
-      .text(yLable);
+      .text(yLabel);
 
   svg.append("path")
       .datum(data)
