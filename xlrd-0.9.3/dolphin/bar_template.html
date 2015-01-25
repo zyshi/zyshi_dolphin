@@ -34,7 +34,7 @@
 var dataInputFile = "bar_data.tsv"
 
 var yLabel = "1980 values"
-var xLabel = ""
+var xLabel = "aaaaa"
 
 var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 1020 - margin.left - margin.right,
@@ -65,10 +65,21 @@ d3.tsv(dataInputFile, type, function(error, data) {
   x.domain(data.map(function(d) { return d.xinput; })); 
   y.domain([0, d3.max(data, function(d) { return d.yinput; })]);
 
+  svg.append("text")      // text label for the x axis
+        .attr("x", 500 )
+        .attr("y", 480 )
+        .style("text-anchor", "middle")
+        .text(xLabel);
+
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis);
+      // .append("text")
+      // .attr("x", 6)
+      // // .attr("dx", ".71em")
+      // .style("text-anchor", "end")
+      // .text("lalala"); // y-label;
 
   svg.append("g")
       .attr("class", "y axis")

@@ -31,7 +31,7 @@ body {
 var dataInputFile = "line_data.tsv"
 
 var yLabel = "ylabel"
-var xLabel = ""
+var xLabel = "xLabel"
 
 var margin = {top: 20, right: 20, bottom: 30, left: 50},
     width = 960 - margin.left - margin.right,
@@ -78,9 +78,13 @@ d3.tsv(dataInputFile, function(error, data) {
   svg.append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-      .attr("dx", ".71em")
-      .style("text-anchor", "end");
+      .call(xAxis);
+
+  svg.append("text")      // text label for the x axis
+      .attr("x", 500 )
+      .attr("y", 480 )
+      .style("text-anchor", "middle")
+      .text(xLabel);
 
   svg.append("g")
       .attr("class", "y axis")

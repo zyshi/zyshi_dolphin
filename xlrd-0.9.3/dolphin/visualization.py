@@ -58,8 +58,8 @@ if plot_type == "scatter" or plot_type == "bar" or plot_type == "line":
 		for row in range(s.nrows):
 			new_line = ""
 			for col in range(s.ncols):
-				# remove blank space in the same cell
-				word = string.replace(str(s.cell(row, col).value), " ", "")
+				# escape the blank space to _
+				word = string.replace(str(s.cell(row, col).value), " ", "_")
 				new_line += word
 				new_line += tab
 			if lineCnt == 0:
@@ -77,6 +77,7 @@ if plot_type == "scatter" or plot_type == "bar" or plot_type == "line":
 
 	# sort if it's line chart TODO
 else:
+	# pie chart change to tsv TODO
 	# processing data
 	# can change the user input to command line input if needed
 	group_index_name = raw_input("Please enter group_index_name: ")
