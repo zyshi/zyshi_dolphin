@@ -4,7 +4,7 @@ import string
 from random import randint
 from xlrd import open_workbook
 
-def generatePlot(plot_type, rawxlsfile, visual_filename, x_index_name, y_index_name):
+def generatePlot(plot_type, rawxlsfile, visual_filename, x_index_name, y_index_name, x_coln_index, y_coln_index):
 	# open the workbook
 	wb = open_workbook(rawxlsfile);
 	# generated datafile names
@@ -28,29 +28,29 @@ def generatePlot(plot_type, rawxlsfile, visual_filename, x_index_name, y_index_n
 		# open the output data file: tsv file
 		data_output = open(tsv_filename, 'w')
 		data_output.truncate()
-		# navigate the work sheet
-		# ===========================
-		# = xinput, yinput, (group) =
-		# ===========================
+
 		lineCnt = 0;
 		for s in wb.sheets():
 			for row in range(s.nrows):
-				new_line = ""
-				for col in range(s.ncols):
+				x_val = str(s.cell(row, x_coln_index));
+				y_val = str(s.cell(row, y_coln_index));
+				if (not "empty" in x_val) and (not "empty" in y_val) : 
+					new_line = ""
+					for col in range(s.ncols):
 					# escape the blank space to _
-					word = string.replace(str(s.cell(row, col).value), " ", "_")
-					new_line += word
-					new_line += tab
-				if lineCnt == 0:
-					# processing the first line of data file
-					new_line = string.replace(new_line, x_index_name, "xinput")
-					new_line = string.replace(new_line, y_index_name, "yinput")
-					if plot_type == "scatter" and group_index_name != "":
-							new_line = string.replace(new_line, group_index_name, "group")			
-					lineCnt += 1
-				if new_line != "":
-					data_output.write(new_line)
-					data_output.write("\n")
+						word = string.replace(str(s.cell(row, col).value), " ", "_")
+						new_line += word
+						new_line += tab
+					if lineCnt == 0:
+						# processing the first line of data file
+						new_line = string.replace(new_line, x_index_name, "xinput")
+						new_line = string.replace(new_line, y_index_name, "yinput")
+						if plot_type == "scatter" and group_index_name != "":
+								new_line = string.replace(new_line, group_index_name, "group")			
+						lineCnt += 1
+					if new_line != "":
+						data_output.write(new_line)
+						data_output.write("\n")
 		# close the file
 		data_output.close()
 		# sort if it's line chart TODO
@@ -137,26 +137,46 @@ wb = open_workbook(argv[1])
 for s in wb.sheets():
 	cnt = 0;
 	for col1 in range(s.ncols):
+		x_is_number = True
+		x_is_string = True
+		y_is_number = True
+		x_is_string = True
 		# escape the blank space to _
 		x_index_name = string.replace(str(s.cell(0, col1).value), " ", "_")
-		x_sample_val = string.replace(str(s.cell(1, col1).value), " ", "_")
+		# check whether all x_val is number 
+		for itr in range(s.nrows):
+			if itr > 0:
+				x_val = string.replace(str(s.cell(itr, col1).value), " ", "")
+				if x_val != "":
+					if isNumber(x_val):
+						x_is_string = False
+					else: # x is string
+						x_is_number = False
+
 		for col2 in range(s.ncols):
 			if col2 > col1:
 				cnt += 1
 				y_index_name = string.replace(str(s.cell(0, col2).value), " ", "_")
-				y_sample_val = string.replace(str(s.cell(1, col2).value), " ", "_")
-				line = "x_index_name: " + x_index_name + " y_index_name: " + y_index_name 
-				vals = "x_sample " + x_sample_val + " y_sample " + y_sample_val
-				if isNumber(x_sample_val) and isNumber(y_sample_val):
+				# check whether all y_val is number
+				for itr in range(s.nrows):
+					if itr > 0:
+						y_val = string.replace(str(s.cell(itr, col2).value), " ", "")
+						if y_val != "":
+							if isNumber(y_val):
+								y_is_string = False
+							else:
+								y_is_number = False
+
+				if x_is_number and y_is_number :
 					output1 = "scatterplot_x" + str(col1) + "_y" + str(col2) + ".html"
-					output2 = "scatterplot_x" + str(col2) + "_y" + str(col1) + ".html"
-					generatePlot("scatter", argv[1], output1, x_index_name, y_index_name)
+					# output2 = "scatterplot_x" + str(col2) + "_y" + str(col1) + ".html"
+					generatePlot("scatter", argv[1], output1, x_index_name, y_index_name, col1, col2)
 					# generatePlot("scatter", argv[1], output2, y_index_name, x_index_name)
-				elif isNumber(x_sample_val) and (not isNumber(y_sample_val)):
+				elif x_is_number and y_is_string:
 					output = "barplot_x" + str(col2) + "_y" + str(col1) + ".html"
-					generatePlot("bar", argv[1], output, y_index_name, x_index_name)
-				elif (not isNumber(x_sample_val)) and isNumber(y_sample_val):
+					generatePlot("bar", argv[1], output, y_index_name, x_index_name, col2, col1)
+				elif x_is_string and y_is_number:
 					output = "barplot_x" + str(col1) + "_y" + str(col2) + ".html"
-					generatePlot("bar", argv[1], output, x_index_name, y_index_name)
+					generatePlot("bar", argv[1], output, x_index_name, y_index_name, col1, col2)
 				else:
 					print "ignoring the output"
