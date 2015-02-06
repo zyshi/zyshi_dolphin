@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+  .autovisual {
+    margin-left: 100px;
+    margin-bottom: 20px;
+  }
+  .bar {
+    fill: steelblue;
+  }
+
+  .bar:hover {
+    fill: brown;
+  }
+
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  div.hr {
+  background: #fff  no-repeat scroll center;
+  margin-left: 15em;
+  margin-right: 15em;
+  width:50em;
+  height:.2px;
+  }
+
+  div.hr hr {
+  display: none;
+  }
+  .x.axis path {
+    display: none;
+  }
+</style>
+<html lang="en">
+  <head>
+      <style>
+        body {
+            padding-top: 30px;
+
+          background-size: 1920px 1200px;
+        }
+      </style>
+      <title> Dolphin Graph Visualization</title> 
+  </head>
+  <body>
+    <div class="row graphcontainer">
+    </div>
+    <div class="hr"><hr /></div>
+      <div class="footer" style="height: 120px; background-color: #f5f5f5;">
+        <div class="container">
+        <br>
+        <p class="muted credit">
+            Powered by
+            <a href="http://twitter.github.io/bootstrap">Bootstrap</a>
+            ,
+            <a href="http://eecs485-02.eecs.umich.edu"> EECS Umich</a>
+            <br>
+            Copyright &copy; 2015 Dolphin Umich EECS Department.
+        </div>
+      </div>
+  </body>
+</html>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- start script renderind d3 graph -->

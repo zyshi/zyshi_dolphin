@@ -1,0 +1,95 @@
+.container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.center {
+    margin:0 auto;
+    max-width: 500px;
+}
+
+a.userlist{
+    color: #08c;
+    text-decoration: none;
+    cursor: auto;
+}
+
+h1 {
+    font-family: "crete round", sans-serif;
+    font-weight: normal;
+}
+
+h2, h3, h4, h5, p {
+    font-family: raleway, sans-serif;
+    font-weight: normal;
+}
+h4 {
+    color: #FFFFFF;
+    line-height: 40px;
+
+}
+h3, h5, p {
+    color: #666;
+    line-height: 40px;
+}
+.margin-right1{
+    margin-right: 10px;
+}
+
+.div-compress{
+    height: 30px;
+}
+
+html, html a {
+    -webkit-font-smoothing: antialiased;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+div.carousel-inner img{
+    height: 200px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-top:60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+.thumb {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-position: center center;
+    background-size: cover;
+}
+
+#pic_block {
+    position: relative;
+    display: inline-block;
+}
+#pic_block > img{
+    padding-bottom: 20px;
+}
+#previous_button {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+#next_button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
