@@ -144,11 +144,11 @@ def autoplotGenerator(fname):
 	rawxlsfile = __SAVE_CSV_DIR + "/" + fname
 
 	# create a separate js folder to store ds js files for this data
-	jsdirectory = __SAVE_JS_DIR + "/" + string.replace(fname,".xls", "");
+	jsdirectory = __SAVE_JS_DIR + "/graph_js/" + string.replace(fname,".xls", "");
 	if not os.path.exists(jsdirectory):
 		os.makedirs(jsdirectory)
 
-	# create a separate js folder to store ds js files for this data
+	# create a separate datas folder to store ds js files for this data
 	datadirectory = __SAVE_DATA_DIR + "/" + string.replace(fname,".xls", "");
 	print datadirectory
 	if not os.path.exists(datadirectory):
@@ -227,4 +227,12 @@ def autoplotGenerator(fname):
 					else:
 						print "ignoring the output"
 						
-	return string.replace(outputbarfilename, __TEMP_DIR, "")
+	outdirpagename = __TEMP_DIR + "/auto_visual_dir_" + string.replace(fname,".xls", "") + ".html"
+	outdirpage = open(outdirpagename, 'w')
+	outdirpage.truncate()
+
+	visuallist = []
+	visuallist.append(string.replace(outputbarfilename, __TEMP_DIR, ""))
+	visuallist.append(string.replace(outputscatterfilename, __TEMP_DIR, ""))
+
+	return visuallist

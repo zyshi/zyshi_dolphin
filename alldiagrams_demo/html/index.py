@@ -8,7 +8,7 @@ from flask import request
 from flask import abort, redirect, url_for, render_template
 from plotGenerator import autoplotGenerator
 import flask.views
-
+import string
 import os
 from util import __SAVE_CSV_DIR
 
@@ -16,13 +16,9 @@ from util import __SAVE_CSV_DIR
 app = Flask(__name__)
 
 
-app.debug = True
-
-
-
 @app.route('/')
 def index_start():
-    return render_template("plot_temp.html")
+    return render_template("upload.html")
     # filename = "test2.xls"
     # autoplotGenerator(filename)
     # return render_template('auto_visual_scatter_test1.html')
@@ -53,8 +49,18 @@ def upload_file():
 def show_result_page():
     if request.method == 'GET':
         cquery = request.args.get('filename')
+        celtarr = []
+        celtarr.append(cquery)
         output = autoplotGenerator(cquery)
-        return render_template(output)    
+        celtarr.extend(output)
+        return render_template("plot_dir_temp.html", eltarr = celtarr)
+
+@app.route("/plots", methods=['GET', 'POST'])
+def show_plot_page():
+    if request.method == 'GET':
+        cquery = request.args.get('plotname')
+        cquery = string.replace(cquery, "/", "")
+        return render_template(cquery)
 
 if __name__ == "__main__":
     app.run()
