@@ -23,15 +23,12 @@ class Sheet:
             return True
         return False
 
-    def get_numbersbycol(self, ccol):
+    def get_valbycol(self, ccol):
         row2cval = {}
         for crow in range(self.rown+1):
-            if not self.corr2type.has_key((crow, ccol)):
+            if not self.corr2value.has_key((crow, ccol)):
                 continue
-            ctype = self.corr2type[(crow, ccol)]
             cval = self.corr2value[(crow, ccol)]
-            if ctype != 0:
-                continue
             row2cval[crow] = cval
         return row2cval
 
