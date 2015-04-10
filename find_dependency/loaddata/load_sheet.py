@@ -15,12 +15,25 @@ class Sheet:
         self.corr2type = {}
         self.corr2value = {}
         
+#         0:numerics; 1:string; 2:formula
         self.type2corrarr = {}
     
     def is_empty(self):
         if self.rown == 0 or self.coln == 0:
             return True
         return False
+
+    def get_numbersbycol(self, ccol):
+        row2cval = {}
+        for crow in range(self.rown+1):
+            if not self.corr2type.has_key((crow, ccol)):
+                continue
+            ctype = self.corr2type[(crow, ccol)]
+            cval = self.corr2value[(crow, ccol)]
+            if ctype != 0:
+                continue
+            row2cval[crow] = cval
+        return row2cval
 
     def add_cell(self, crow, ccol, ctype, cval, sheetname):
         if len(self.sheetname) != 0 and self.sheetname != sheetname:
