@@ -5,6 +5,7 @@
 import re
 import load_sheet
 import string
+import sys
 
 class AnnotationBook:
     def __init__(self, sheet):
@@ -195,15 +196,15 @@ if __name__ == '__main__':
     load = load_sheet.LoadSheet()
     # filepath = '/z/chenzhe-data/spreadsheet/webexcel/webexcel_sample5000_txt/'
     # filename = 'http:____britishhorseracing.com__images__inside_horseracing__media__2006_Fixture_List_by_date.xls'
-    filename = 'test1.txt'
+    filename = sys.argv[1]
     # sheetarr = load.load_sheets(filepath+"/"+filename)
     sheetarr = load.load_sheets(filename)
     # datadirectory = "/home/zyshi"
     # outFile = datadirectory + "/" + filename  
-    outFileName = string.replace(filename, "txt", "out")
+    # outFileName = string.replace(filename, "txt", "out")
 
-    outFile = open(outFileName, 'w')
-    outFile.truncate()
+    # outFile = open(outFileName, 'w')
+    # outFile.truncate()
 
 
     for csheet in sheetarr:
