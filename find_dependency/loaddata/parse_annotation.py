@@ -5,6 +5,7 @@
 import re
 import load_sheet
 import string
+import sys
 
 class AnnotationBook:
     def __init__(self, sheet):
@@ -139,9 +140,19 @@ class ParseFormula:
     def getSemanticFormula(self, frow, fcol, formula, coor2anno):
         fcoor = self.__coor2name__(frow, fcol)
         formula = fcoor + '=' + formula
+        print formula
+        # for (crow, ccol), anno in coor2anno.items():
+        #     coor = self.__coor2name__(crow, ccol)
+        #     formula = string.replace(formula, coor, str(anno))
+        name2anno = {}
+
         for (crow, ccol), anno in coor2anno.items():
             coor = self.__coor2name__(crow, ccol)
-            formula = string.replace(formula, coor, str(anno))
+            name2anno[coor] = anno
+        print name2anno
+        #     pattern = '^|[^A-Z]'+coor+'[^0-9]|$'
+        #     formula = re.sub(pattern, str(anno), formula)
+        #     # formula = string.replace(formula, coor, str(anno))
         return formula
 
     def parse_sheet(self):
@@ -185,7 +196,7 @@ if __name__ == '__main__':
     load = load_sheet.LoadSheet()
     # filepath = '/z/chenzhe-data/spreadsheet/webexcel/webexcel_sample5000_txt/'
     # filename = 'http:____britishhorseracing.com__images__inside_horseracing__media__2006_Fixture_List_by_date.xls'
-    filename = 'test1.txt'
+    filename = sys.argv[1]
     # sheetarr = load.load_sheets(filepath+"/"+filename)
     sheetarr = load.load_sheets(filename)
     # datadirectory = "/home/zyshi"
