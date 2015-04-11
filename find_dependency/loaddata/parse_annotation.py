@@ -132,9 +132,19 @@ class ParseFormula:
     def getSemanticFormula(self, frow, fcol, formula, coor2anno):
         fcoor = self.__coor2name__(frow, fcol)
         formula = fcoor + '=' + formula
+        print formula
+        # for (crow, ccol), anno in coor2anno.items():
+        #     coor = self.__coor2name__(crow, ccol)
+        #     formula = string.replace(formula, coor, str(anno))
+        name2anno = {}
+
         for (crow, ccol), anno in coor2anno.items():
             coor = self.__coor2name__(crow, ccol)
-            formula = string.replace(formula, coor, str(anno))
+            name2anno[coor] = anno
+        print name2anno
+        #     pattern = '^|[^A-Z]'+coor+'[^0-9]|$'
+        #     formula = re.sub(pattern, str(anno), formula)
+        #     # formula = string.replace(formula, coor, str(anno))
         return formula
 
     def parse_sheet(self):
