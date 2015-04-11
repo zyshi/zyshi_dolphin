@@ -17,7 +17,12 @@ class AnnotationBook:
         # populate all possible annotations
         # Assume annotations are string
         
+            
         annotations = {}
+        
+        if not sheet.type2corrarr.has_key(1):
+            return annotations
+        
         # 0:numerics; 1:string; 2:formula
         strcorrarr = sheet.type2corrarr[1]
         for (crow, ccol) in strcorrarr:
@@ -50,6 +55,8 @@ class FormulaBook:
 
     def loadFormulas(self, sheet):
         formulas = {}
+        if not sheet.type2corrarr.has_key(2):
+            return formulas
         # 0:numerics; 1:string; 2:formula
         strcorrarr = sheet.type2corrarr[2]
         for (crow, ccol) in strcorrarr:
@@ -178,7 +185,7 @@ if __name__ == '__main__':
     load = load_sheet.LoadSheet()
     # filepath = '/z/chenzhe-data/spreadsheet/webexcel/webexcel_sample5000_txt/'
     # filename = 'http:____britishhorseracing.com__images__inside_horseracing__media__2006_Fixture_List_by_date.xls'
-    filename = 'test.txt'
+    filename = 'test1.txt'
     # sheetarr = load.load_sheets(filepath+"/"+filename)
     sheetarr = load.load_sheets(filename)
     # datadirectory = "/home/zyshi"
