@@ -80,7 +80,7 @@ class ParseFormula:
                 num = num * 26 + (ord(c.upper()) - ord('A')) + 1
         return num - 1
     
-    def __num2col__(self, crow, ccol):
+    def __coor2name__(self, crow, ccol):
         crow += 1
         
         rightalpha = chr(ccol % 26 + ord('A'))
@@ -90,12 +90,12 @@ class ParseFormula:
         
         return  leftalpha + rightalpha + str(crow)
         
-    def parseCoor(self, coor):
+    def __name2coor__(self, coor):
         row = re.search(r'\d+', coor).group()
         rown = int(row)
         coln = self.__col2num__(string.replace(coor, row, ""))
 #         self.opCoorArr.append((rown, coln))
-        return (rown, coln)
+        return (rown-1, coln)
     
     def isValidCell(self, coor):
         cpattern = '^[A-Z]+[0-9]+$'
@@ -116,7 +116,7 @@ class ParseFormula:
         duplicatearr = set()
         for (crow, ccol), ccount in annocoor2count.items():
             if ccount == len(coor2anno):
-                duplicatearr.append((crow, ccol))
+                duplicatearr.add((crow, ccol))
         
         newcoor2anno = {}        
         for (crow, ccol), annodict in coor2anno.items():
@@ -130,11 +130,11 @@ class ParseFormula:
         return newcoor2anno
     
     def getSemanticFormula(self, frow, fcol, formula, coor2anno):
-        fcoor = self.__num2col__(frow, fcol)
+        fcoor = self.__coor2name__(frow, fcol)
         formula = fcoor + '=' + formula
         for (crow, ccol), anno in coor2anno.items():
-            coor = self.__num2col__(crow, ccol)
-            formula = formula.replace(coor, anno)
+            coor = self.__coor2name__(crow, ccol)
+            formula = string.replace(formula, coor, str(anno))
         return formula
 
     def parse_sheet(self):
@@ -159,9 +159,9 @@ class ParseFormula:
                 continue
             if not self.isValidCell(coor):
                 continue
-            (crow, ccol) = self.parseCoor(coor)
-            topannoarr, leftannoarr = self.annotationbook.getAnnotation(crow, ccol)
-            coor2anno[(crow, ccol)] = (topannoarr, leftannoarr)
+            (crow, ccol) = self.__name2coor__(coor)
+            annodict = self.annotationbook.getAnnotation(crow, ccol)
+            coor2anno[(crow, ccol)] = annodict
         coor2anno[(frow, fcol)] = (self.annotationbook.getAnnotation(frow, fcol))
         
         coor2anno = self.filter_annotations(coor2anno)
