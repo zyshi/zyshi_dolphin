@@ -190,10 +190,6 @@ if __name__ == '__main__':
     sheetarr = load.load_sheets(filename)
     # datadirectory = "/home/zyshi"
     # outFile = datadirectory + "/" + filename  
-    outFileName = string.replace(filename, "txt", "out")
-
-    outFile = open(outFileName, 'w')
-    outFile.truncate()
 
 
     for csheet in sheetarr:

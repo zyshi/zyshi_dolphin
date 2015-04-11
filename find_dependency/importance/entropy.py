@@ -13,10 +13,11 @@ class SheetEntropy:
             return 0
         
         val2count = {}
-        for cnum in valarr:
-            if not val2count.has_key(cnum):
-                val2count[cnum] = 0
-            val2count[cnum] += 1
+        for cval in valarr:
+#             print cval
+            if not val2count.has_key(cval):
+                val2count[cval] = 0
+            val2count[cval] += 1
         
         centropy = 0
         for ccount in val2count.values():
