@@ -139,33 +139,57 @@ k = 2:
 	Country vs Cumulative emissions, 1850-2004, MtCO2
 
 ==== 6 =====
-Filename: 
-Sheet: 
-
+Filename: tzicekQ4pOyNnoImzRYVF7Q.xls
+Sheet: Major Sightings
+...
+k = 7:
+	Place vs Country/Region vs Date vs Time (24 hr clock) vs Details vs Link to Nat Archives PDF vs Page 
+...
 
 ==== 7 =====
-Filename: 
-Sheet: 
+Filename: phNtm3LmDZEM8JDnsvQFkYw.xls
+Sheet: sheet 1
+...
+k = 9:
+	Calendar Year vs Accident vs Hostile Action vs Homicide vs Illness vs Pending vs Self Inflicted vs Terrorist Attack vs Undetermined
 
+	note: President can be inferred from the calendar year
+		  total death can be inferred from sum of deaths caused by different types
+...
 
 ==== 8 =====
-Filename: 
-Sheet: 
+Filename: rc6-0Vh26VjD1pXQ5NtUYxg.xls
+Sheet: sheet 1
+k = 2 * :
+	Company vs TOTAL ASSETS, $
+	Company vs Year
 
+k = 3:
+	Company vs Year vs TOTAL ASSETS, $
 
 ==== 9 =====
-Filename: 
+Filename: tevrPUrs0zYBG3xMaRW0M9w.xls
 Sheet: 
 
 ==== 10 =====
-Filename: 
-Sheet: 
+Filename: tgXrFZEwE4ZX7X0fhNtIjPQ.xls
+Sheet: STATEMENTS
+k = 2:
+	STATEMENT vs APPLAUSE, seconds
 
 ==== 11 =====
-Filename: 
-Sheet: 
+Filename: phNtm3LmDZEO-NiUKPP26KA.xls
+Sheet: Drinking By Region
+k = 2 *:
+	Region vs Drank Last week %
+	Region vs Drank on 5 or more days last week
+k = 3:
+	Region vs Drank Last week % vs Drank on 5 or more days last week
 
-
+Sheet: Total Figure
+...
+k = 11:
+	Age vs 1998	vs 2000	vs 2001	vs 2002	vs 2003	vs 2004	vs 2005	vs 2006 original method	vs 2006 New units sixe vs 2007
 
 ==== 12 =====
 Filename: 
