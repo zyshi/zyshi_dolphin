@@ -1,0 +1,139 @@
+Minimal Spreadsheet
+Manual report for k coln selection
+==== 1 =====
+Filename: 0AonYZs4MzlZbdHd2LXdiSk1QMHFwOEtvcHdZNWgtQ1E.xls
+Sheet: Summary Comba Rate
+k = 2 *:
+* info loss
+	Country vs Combined corporate tax rate
+	Country vs Net debt, % of GDP
+	Country vs Real GDP, % change from previous year
+k = 3 *:
+	Country vs Year vs Combined corporate tax rate
+	Country vs Year vs Net debt, % of GDP
+	Country vs Year vs Real GDP, % change from previous year
+k = 4:
+	Country vs Year vs Combined corporate tax rate vs Net debt, % of GDP
+	Country vs Year vs Combined corporate tax rate vs Real GDP, % change from previous year
+	Country vs Year vs Net debt, % of GDP vs Real GDP, % change from previous year
+k = 5
+	Country vs Year vs Combined corporate tax rate vs Net debt, % of GDP vs Real GDP, % change from previous year
+
+Sheet: INCOME
+k = 2 *:
+	COUNTRY vs 2010
+	COUNTRY vs 2009
+	COUNTRY vs 2008
+	Note: we assume the most recent data is more useful
+k = 3 *:
+	COUNTRY vs 2010 vs 2009
+	COUNTRY vs 2010 vs 2008
+	COUNTRY vs 2010 vs 2007
+k = 4 *:
+	...
+
+Sheet: 2010
+Formula detected: Hi = Ei + Gi
+k = 2 *:
+	COUNTRY vs Adjusted central government corporate income tax rate 3
+	COUNTRY vs Sub-central government corporate income tax rate 4
+	COUNTRY vs government corporate income tax rate 2
+
+k = 3 *:
+	COUNTRY vs Adjusted central government corporate income tax rate 3 vs Sub-central government corporate income tax rate 4
+
+k = 4 *:
+	COUNTRY vs Adjusted central government corporate income tax rate 3 vs Sub-central government corporate income tax rate 4 vs Targeted corporate tax rates  6
+k = 5:
+	COUNTRY vs Adjusted central government corporate income tax rate 3 vs Sub-central government corporate income tax rate 4 vs Targeted corporate tax rates  6 vs Central government corporate income tax rate 2
+
+==== 2 =====
+Filename: 
+Sheet: 
+
+
+==== 3 =====
+Filename: 
+Sheet: 
+
+
+==== 4 =====
+Filename: 
+Sheet: 
+
+
+==== 5 =====
+Filename: 
+Sheet: 
+
+==== 6 =====
+Filename: 
+Sheet: 
+
+
+==== 7 =====
+Filename: 
+Sheet: 
+
+
+==== 8 =====
+Filename: 
+Sheet: 
+
+
+==== 9 =====
+Filename: 
+Sheet: 
+
+==== 10 =====
+Filename: 
+Sheet: 
+
+==== 11 =====
+Filename: 
+Sheet: 
+
+
+
+==== 12 =====
+Filename: 
+Sheet: 
+
+
+==== 13 =====
+Filename: 
+Sheet: 
+
+
+==== 14 =====
+Filename: 
+Sheet: 
+
+
+==== 15 =====
+Filename: 
+Sheet: 
+
+==== 16 =====
+Filename: 
+Sheet: 
+
+
+==== 17 =====
+Filename: 
+Sheet: 
+
+
+==== 18 =====
+Filename: 
+Sheet: 
+
+
+==== 19 =====
+Filename: 
+Sheet: 
+
+
+==== 20 =====
+Filename: 
+Sheet: 
