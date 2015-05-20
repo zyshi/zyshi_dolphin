@@ -76,18 +76,67 @@ k = 10
 	Title vs Author vs Imprint vs Volume vs Value vs RRP vs ASP vs Binding vs Publ Date vs Product Class
 
 ==== 3 =====
-Filename: 
-Sheet: 
-
+Filename: phNtm3LmDZEOEqWqH8S4WKg.xls
+Sheet: sheet 1
+k = 2:
+	Location vs Per capita recorded alcohol consumption (litres of pure alcohol) among adults (older than 15 years)
 
 ==== 4 =====
-Filename: 
-Sheet: 
+Filename: 0AonYZs4MzlZbdG1CT3ZUSldiRTQ1UDZiazN0dTlQUHc.xls
+Sheet: International Prices
+k = 2 *:
+	Date vs Rice
+	Date vs Wheat
+	Date vs Maize
 
+k = 3 *:
+	Date vs Rice vs Wheat
+	Date vs Rice vs Maize
+	Date vs Wheat vs Maize
+
+k = 4:
+	Date vs Rice vs Wheat vs Maize
 
 ==== 5 =====
-Filename: 
-Sheet: 
+Filename: phNtm3LmDZEP4Ou7jpeRQbA.xls
+Sheet: Total Figures
+k = 2 *:
+	2006 world ranking vs Country
+	Country vs 2006
+	...
+
+k = 3 *:
+	Country vs 2006 vs 1996
+	Country vs 2006 vs 2005
+
+k = 4 *:
+	Country vs 2006 vs 2005 vs 1996
+
+...
+
+k = 17:
+	2006 world ranking vs Country vs 1993 vs 1994 vs 1995 vs 1996 vs 1997 vs 1998 vs 1999 vs 2000 vs 2001 vs 2002 vs 2003 vs 2004 vs 2006 vs Emissions per capita
+...
+
+Sheet: Rank Emissions
+k = 2 *: 
+	Country vs 2006 
+	note: 2006 rank can be inferred from 2006
+k = 3:
+	Country vs 2006 vs 2005 rank
+
+Sheet: PER CAPITA
+k = 2:
+	Country vs Emissions per capita
+
+Sheet: % change
+K = 2: 
+	Country vs % change
+
+
+Sheet: Total Emissions
+k = 2:
+	Country vs Cumulative emissions, 1850-2004, MtCO2
 
 ==== 6 =====
 Filename: 
