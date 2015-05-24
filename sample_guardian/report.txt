@@ -192,44 +192,169 @@ k = 11:
 	Age vs 1998	vs 2000	vs 2001	vs 2002	vs 2003	vs 2004	vs 2005	vs 2006 original method	vs 2006 New units sixe vs 2007
 
 ==== 12 =====
-Filename: 
+Filename: 0AonYZs4MzlZbdE1lNnlrNTg4VDc5aXNqUGtjVzVOZ2c.xls
 Sheet: 
+No data, just record
 
 
 ==== 13 =====
-Filename: 
-Sheet: 
+Filename: tLyfKCfwYWT98CL9DJ75wbA.xls
+Sheet: Recorded Crime
+k = 2 *:
+	offense vs 2008/09
+	offense vs 2007/08
+	offense vs 2006/07
 
+k = 3 *:
+	offense vs 2007/08 vs 2008/09
+
+k = 4 *:
+	...
+
+k = 13:
+	offense vs 1997 vs 1998/992 vs 2000/01 vs 2002/03 vs 2003/04 vs 2005/06 vs 2006/07 vs 2007/08 vs 2008/09
 
 ==== 14 =====
-Filename: 
-Sheet: 
+Filename: 0AonYZs4MzlZbdG9TMllaaVhaWURodEdTU1RpeldQUnc.xls
+Sheet: East Midlands SHA spend 25k
+Expense Type can be inferred from Expense Area
+k = 2 *:
+	Date vs Amount
+	Expense Area vs Amount
 
+k = 3 *:
+	Date vs Expense Area vs Amount
+
+k = 4 *:
+	Date vs Expense Area vs Supplier vs Amount
+
+k = 5 *:
+	Date vs Expense Area vs Supplier vs Amount vs Transaction Number
+	Date vs Expense Area vs Supplier vs Amount vs Vat Registration Number
+	Date vs Expense Area vs Supplier vs Amount vs Invoice Number
+
+k = 6 *:
+	Date vs Expense Area vs Supplier vs Amount vs Transaction Number vs Vat Registration Number
+	Date vs Expense Area vs Supplier vs Amount vs Transaction Number vs Invoice Number
+	Date vs Expense Area vs Supplier vs Amount vs Vat Registration Number vs Invoice Number
+
+k = 7:
+	Date vs Expense Area vs Supplier vs Amount vs Transaction Number vs Vat Registration Number vs Invoice Number
 
 ==== 15 =====
-Filename: 
-Sheet: 
+Filename: 0AonYZs4MzlZbcGhOdG0zTG1EWkVPdmFISlFXSTNwYlE.xls
+Sheet: By Policy Force 2010-11
+k = 2 *:
+	Police force area vs Firearms certificates on issue, 31 March 2011
+	Police force area vs Shotgun certificate on issure, 31 March 2011
+	Police force area vs TOTAL ACTUAL FIREARMS PLUS SHOTGUNS COVERED BY CERTIFICATES, 2011
+
+k = 3 *:
+	Police force area vs Firearms certificates on issue, 31 March 2011 vs Shotgun certificate on issure, 31 March 2011
+	Police force area vs Firearms certificates on issue, 31 March 2011 vs TOTAL ACTUAL FIREARMS PLUS SHOTGUNS COVERED BY CERTIFICATES, 2011
+	Police force area vs Shotgun certificate on issure, 31 March 2011 vs Police force area vs TOTAL ACTUAL FIREARMS PLUS SHOTGUNS COVERED BY CERTIFICATES, 2011
+
+...
+
+k = 21:
+	Police force area vs Firearms certificates on issue, 31 March 2011 vs Shotgun certificate on issure, 31 March 2011 vs TOTAL ACTUAL FIREARMS PLUS SHOTGUNS COVERED BY CERTIFICATES, 2011 vs TOTAL ACTUAL FIREARMS PLUS SHOTGUNS COVERED BY CERTIFICATES, 2011 vs Firearms covered by certificates, 31 March 2011 vs Average no. firearms per certificate vs New firearms applications granted vs New firearms applications refused	Firearm renewal applications granted	Firearm renewal applications refused	Firearm certificate variation granted	Firearm certificate variation refused	Firearms certificate revoked	Shotguns - new applications granted	Shotguns - new applications refused	Shotguns - renewal  applications granted	Shotguns - renewal  applications refused	Shotgun licenses revoked	Number of shotguns covered by certificates, 31 March 2010	Average no of shotguns per certificate
+
+Sheet: Populations
+k = 2 *: 
+	Force vs Population figures (thousands), 2008
+	Force vs Population figures (thousands), 2009
+
+k = 3:
+	Force vs Population figures (thousands), 2008 vs Population figures (thousands), 2009
 
 ==== 16 =====
-Filename: 
-Sheet: 
+Filename: rkRHpG4_bFQCc7ACchqwQlw.xls
+Sheet: England & Wales Quarterly
+k = 2 *:
+	Year vs Total
+	Year vs Bankruptcy Orders
+k = 3 *:
+	Year vs Total vs Bankruptcy Orders
+k = 4:
+	Year vs England & Wales vs Total vs Bankruptcy Orders
 
+Sheet: Annual
+k = 2 *:
+	Year vs Total
+	Year vs Bankruptcy Orders
+	Year vs Deeds of arrangements
+
+k = 3 *:
+	Year vs Total vs Bankruptcy Orders
+	Year vs Total vs Deeds of arrangements
+	Year vs Bankruptcy Orders vs Deeds of arrangements
+
+k = 4:
+	Year vs Total vs Bankruptcy Orders vs Deeds of arrangements
+
+Sheet: Scotland Quarterly
+k = 2 *:
+	Year vs Total
+	Year vs Sequestrations
+	Year vs Protected Trust Deeds
+
+k = 3 *:
+	Year vs Total vs Sequestrations
+	Year vs Total Protected Trust Deeds
+	Year vs Sequestrations vs Total Protected Trust Deeds
 
 ==== 17 =====
-Filename: 
-Sheet: 
+Filename: phNtm3LmDZEPgXnvwJ-SsHQ.xls
+Sheet: sheet 1
+k = 2 *:
+	Location vs Contraceptive prevalence (%)
+	Location vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) female
+	Location vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) male
 
+k = 3 *:
+	Location vs Contraceptive prevalence (%) vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) female
+	Location vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) female vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) male
+	Location vs Contraceptive prevalence (%) vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) male
+
+k = 4:
+	Location vs Contraceptive prevalence (%) vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) female vs Prevalence of condom use by young people (15-24 years) at higher risk sex (%) male
 
 ==== 18 =====
-Filename: 
-Sheet: 
+Filename: 0AonYZs4MzlZbdG51V0VrVTBCMHg3S1czd3ZmNGh4dEE.xls
+Sheet: yorkshire-humber-SHA-expenditur
+k = 2 *:
+k = 2 *:
+	Date vs Amount
+	Expense Area vs Amount
 
+k = 3 *:
+	Date vs Expense Area vs Amount
+
+k = 4 *:
+	Date vs Expense Area vs Supplier vs Amount
+
+k = 5:
+	Date vs Expense Area vs Supplier vs Amount vs Transaction Number
 
 ==== 19 =====
-Filename: 
-Sheet: 
+Filename: 0AonYZs4MzlZbdC1JczdYVGJKLUxPVFVXQVBKSEd1SkE.xls
+Sheet: ETA VICTIMS BY YEAR
+k = 2:
+	Year vs Victims
 
+Sheet: ETA VICTIMS BY FORCE
+	Force vs Victims
+
+Sheet: ETA VICTIMS BY LOCATION
+	Location vs Victims
 
 ==== 20 =====
-Filename: 
-Sheet: 
+Filename: phNtm3LmDZEOT3PrETIPFeA.xls
+Sheet: Births by State
+...
+k = 9:
+Births in 2007	All races	Non hispanic white	Non-Hispanic black	American Indian/Alaskan native	Asian or Pacific Islander	Hispanic	Birth rate, all races	Fertility rate, all races
+
+Sheet: Teen Births by State
+Area vs 2007 vs 2006
+
